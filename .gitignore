@@ -36,3 +36,8 @@ build/
 ### Log ###
 *.log
 *.gz
+
+### Spring Boot Profile ###
+application-prod.properties
+application-test.properties
+application-dev.properties
