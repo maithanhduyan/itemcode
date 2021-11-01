@@ -30,4 +30,10 @@ public class HomeController {
 		
 		return "index";
 	}
+	
+	@RequestMapping("/pos")
+	public String viewPOS(Model model) {
+		
+		return "pos";
+	}
 }
