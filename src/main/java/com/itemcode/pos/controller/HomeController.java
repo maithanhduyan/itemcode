@@ -24,4 +24,10 @@ public class HomeController {
 		LOG.info("Take: " + (System.currentTimeMillis() - start) + " ms");
 		return "index";
 	}
+	
+	@RequestMapping("/addNewItem")
+	public String addNewItem(Model model) {
+		
+		return "index";
+	}
 }
