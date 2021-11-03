@@ -1,6 +1,5 @@
 package com.itemcode.pos.entity;
 
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -26,38 +25,14 @@ public class Product implements Serializable {
 	@Column(name = "CODE")
 	private String code;
 
-	@Column(name = "COST_PRICE")
+	@Column(name = "COST_PRICE", columnDefinition = "int default 0")
 	private double costPrice;
 
-	@Column(name = "SALE_PRICE")
-	private double salePrice;
-
-	@Column(name = "PROMO_PRICE")
-	private double promoPrice;
-
-	@Column(name = "PROMO_STATUS")
-	private int promoStatus;
-
-	@Column(name = "SKU")
-	private String sku;
-
-	@Column(name = "DESCRIPTION")
+	@Column(name = "DESCRIPTION", nullable = true)
 	private String description;
-
-	@Column(name = "LINK_URL")
-	private String linkURL;
-
-	@Column(name = "IMAGE_URL")
-	private String imageURL;
 
 	@Column(name = "ACTIVE")
 	private int active;
-
-	@Column(name = "BADGE")
-	private String badge;
-
-	@Column(name = "IN_STOCK")
-	private int inStock;
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -120,30 +95,6 @@ public class Product implements Serializable {
 		this.costPrice = costPrice;
 	}
 
-	public double getSalePrice() {
-		return salePrice;
-	}
-
-	public void setSalePrice(double salePrice) {
-		this.salePrice = salePrice;
-	}
-
-	public double getPromoPrice() {
-		return promoPrice;
-	}
-
-	public void setPromoPrice(double promoPrice) {
-		this.promoPrice = promoPrice;
-	}
-
-	public int getPromoStatus() {
-		return promoStatus;
-	}
-
-	public void setPromoStatus(int promoStatus) {
-		this.promoStatus = promoStatus;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -152,52 +103,12 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
-	public String getSku() {
-		return sku;
-	}
-
-	public void setSku(String sku) {
-		this.sku = sku;
-	}
-
-	public String getLinkURL() {
-		return linkURL;
-	}
-
-	public void setLinkURL(String linkURL) {
-		this.linkURL = linkURL;
-	}
-
-	public String getImageURL() {
-		return imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-	}
-
 	public int getActive() {
 		return active;
 	}
 
 	public void setActive(int active) {
 		this.active = active;
-	}
-
-	public String getBadge() {
-		return badge;
-	}
-
-	public void setBadge(String badge) {
-		this.badge = badge;
-	}
-
-	public int getInStock() {
-		return inStock;
-	}
-
-	public void setInStock(int inStock) {
-		this.inStock = inStock;
 	}
 
 	public String getCreatedBy() {
@@ -242,11 +153,9 @@ public class Product implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", code=" + code + ", costPrice=" + costPrice + ", salePrice="
-				+ salePrice + ", promoPrice=" + promoPrice + ", promoStatus=" + promoStatus + ", sku=" + sku
-				+ ", description=" + description + ", linkURL=" + linkURL + ", imageURL=" + imageURL + ", active="
-				+ active + ", badge=" + badge + ", inStock=" + inStock + ", createdBy=" + createdBy + ", updatedBy="
-				+ updatedBy + ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
+		return "Product [id=" + id + ", name=" + name + ", code=" + code + ", costPrice=" + costPrice + ", description="
+				+ description + ", active=" + active + ", createdBy=" + createdBy + ", updatedBy=" + updatedBy
+				+ ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
 	}
 
 }

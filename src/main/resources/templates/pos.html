@@ -103,6 +103,28 @@
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if (keycode == '13') {
                 console.log('Enter');
+                $.ajax({
+                    type: "post",
+                    url: "/api/v1/pos/fetchByCode",
+                    dataType: "json",
+                    data: {
+                        command: "getCartCounter",
+                        RequestKey: "",
+                        BarCode: ""
+                    },
+                    success: function (data, textStatus, xhr) {
+                        if (xhr.status == 200 && textStatus == "success") {
+                            console.log(data);
+                            cartCounter = data;
+
+                        }
+                    },
+                    complete: function (xhr, textStatus) {
+                        console.log("Completed");
+                    },
+                });
+
+                // Clear barcode
                 code.val("");
             }
         });
